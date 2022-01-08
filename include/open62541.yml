@@ -1,0 +1,5 @@
+description: Open62541
+includes:
+- src/c/open62541.h
+prefixes:
+- UA_

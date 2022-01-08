@@ -1,0 +1,16 @@
+name: LibOpen62541
+ldflags: "./build/open65241.o"
+destdir: src/open62541
+includes:
+  - include/*.yml
+rename:
+  rules:
+    
+    "ExternalVar":
+    - pattern: "UA_"
+      replacement: "var"
+    "*":
+    - pattern: ^UA_
+      replacement: ""
+options:
+  import_docstrings: brief
