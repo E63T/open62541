@@ -12128,6 +12128,7 @@ lib LibOpen62541
   fun ua_client_read_user_executable_attribute_async = UA_Client_readUserExecutableAttribute_async(client : UaClient, node_id : UaNodeId, callback : UaClientAsyncReadUserExecutableAttributeCallback, userdata : Void*, req_id : UaUInt32*) : UaStatusCode
   fun ua_client_read_user_write_mask_attribute = UA_Client_readUserWriteMaskAttribute(client : UaClient, node_id : UaNodeId, out_user_write_mask : UaUInt32*) : UaStatusCode
   fun ua_client_read_user_write_mask_attribute_async = UA_Client_readUserWriteMaskAttribute_async(client : UaClient, node_id : UaNodeId, callback : UaClientAsyncReadUserWriteMaskAttributeCallback, userdata : Void*, req_id : UaUInt32*) : UaStatusCode
+  fun ua_client_read_attribute_impl = __UA_Client_readAttribute(c : UaClient*, n : UaNodeId*, a : UaAttributeId, o : Void*, odt : UaDataType*) : UaStatusCode
   fun ua_client_read_value_attribute = UA_Client_readValueAttribute(client : UaClient, node_id : UaNodeId, out_value : UaVariant*) : UaStatusCode
   fun ua_client_read_value_attribute_async = UA_Client_readValueAttribute_async(client : UaClient, node_id : UaNodeId, callback : UaClientAsyncReadValueAttributeCallback, userdata : Void*, req_id : UaUInt32*) : UaStatusCode
   fun ua_client_read_value_rank_attribute = UA_Client_readValueRankAttribute(client : UaClient, node_id : UaNodeId, out_value_rank : UaInt32*) : UaStatusCode
@@ -15032,5 +15033,37 @@ lib LibOpen62541
   union UaVariableTypeNodeValue
     data : UaVariableTypeNodeValueData
     data_source : UaDataSource
+  end
+
+  $ua_types = UA_TYPES : Pointer(UaDataType)
+
+  enum UaAttributeId
+    UA_ATTRIBUTEID_NODEID                  = 1
+    UA_ATTRIBUTEID_NODECLASS               = 2
+    UA_ATTRIBUTEID_BROWSENAME              = 3
+    UA_ATTRIBUTEID_DISPLAYNAME             = 4
+    UA_ATTRIBUTEID_DESCRIPTION             = 5
+    UA_ATTRIBUTEID_WRITEMASK               = 6
+    UA_ATTRIBUTEID_USERWRITEMASK           = 7
+    UA_ATTRIBUTEID_ISABSTRACT              = 8
+    UA_ATTRIBUTEID_SYMMETRIC               = 9
+    UA_ATTRIBUTEID_INVERSENAME             = 10
+    UA_ATTRIBUTEID_CONTAINSNOLOOPS         = 11
+    UA_ATTRIBUTEID_EVENTNOTIFIER           = 12
+    UA_ATTRIBUTEID_VALUE                   = 13
+    UA_ATTRIBUTEID_DATATYPE                = 14
+    UA_ATTRIBUTEID_VALUERANK               = 15
+    UA_ATTRIBUTEID_ARRAYDIMENSIONS         = 16
+    UA_ATTRIBUTEID_ACCESSLEVEL             = 17
+    UA_ATTRIBUTEID_USERACCESSLEVEL         = 18
+    UA_ATTRIBUTEID_MINIMUMSAMPLINGINTERVAL = 19
+    UA_ATTRIBUTEID_HISTORIZING             = 20
+    UA_ATTRIBUTEID_EXECUTABLE              = 21
+    UA_ATTRIBUTEID_USEREXECUTABLE          = 22
+    UA_ATTRIBUTEID_DATATYPEDEFINITION      = 23
+    UA_ATTRIBUTEID_ROLEPERMISSIONS         = 24
+    UA_ATTRIBUTEID_USERROLEPERMISSIONS     = 25
+    UA_ATTRIBUTEID_ACCESSRESTRICTIONS      = 26
+    UA_ATTRIBUTEID_ACCESSLEVELEX           = 27
   end
 end
