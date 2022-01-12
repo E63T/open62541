@@ -9,7 +9,7 @@ Crystal Bindings for [open62541](https://open62541.org/)
    ```yaml
    dependencies:
      open62541:
-       github: your-github-user/open62541
+       github: E63T/open62541
    ```
 
 2. Run `shards install`
@@ -28,7 +28,7 @@ TODO: Write development instructions here
 
 ## Contributing
 
-1. Fork it (<https://github.com/your-github-user/open62541/fork>)
+1. Fork it (<https://github.com/E63T/open62541/fork>)
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
@@ -36,4 +36,4 @@ TODO: Write development instructions here
 
 ## Contributors
 
-- [unn4m3d](https://github.com/your-github-user) - creator and maintainer
+- [unn4m3d](https://github.com/E63T) - creator and maintainer
